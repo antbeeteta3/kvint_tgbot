@@ -33,17 +33,17 @@ class PizzaDialog:
 		if text in ('большую', 'маленькую'):
 			self.size = text
 			return True
-		self.reply += 'Простите, не понял, так большую или маленькую? '
+		self.reply += 'Простите, не понял, большую или маленькую? '
 
 	def on_enter_wait_payment(self, _):
-		self.reply += 'Как вы будете платить? Картой или наличкой? '
+		self.reply += 'Как вы будете платить? Картой или наличными? '
 
 	def cnd_from_payment(self, text):
 		text = text.lower()
-		if text in ('картой', 'наличкой'):
+		if text in ('картой', 'наличными'):
 			self.payment = text
 			return True
-		self.reply += 'Простите, не понял, так картой или наличкой? '
+		self.reply += 'Простите, не понял, картой или наличными? '
 
 	def on_enter_wait_confirmation(self, _):
 		self.reply += f'Итак, вы хотите {self.size} пиццу, оплата - {self.payment}. Правильно? '

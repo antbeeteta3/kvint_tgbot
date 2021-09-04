@@ -38,7 +38,7 @@ class TelegramBotTransport(BaseTransport):
 		token_env_name = 'TGBOT_TOKEN'
 		token = os.environ.get(token_env_name)
 		if not token:
-			raise RuntimeError('Set environment variable {token_env_name}')
+			raise RuntimeError(f'Set environment variable {token_env_name}')
 
 		self.updater = Updater(token=token, use_context=True)
 
